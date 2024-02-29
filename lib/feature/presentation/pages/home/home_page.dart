@@ -1,6 +1,8 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ridhaaf_flutter/core/presentation/routes/app_routes.dart';
 import 'package:ridhaaf_flutter/core/presentation/widgets/app_body.dart';
 import 'package:ridhaaf_flutter/core/presentation/widgets/app_link_text.dart';
 import 'package:ridhaaf_flutter/core/presentation/widgets/default_spacer.dart';
@@ -23,7 +25,7 @@ class HomePage extends StatelessWidget {
               const DefaultSpacer(),
               _introductionSection(),
               const DefaultSpacer(),
-              _worksSection(),
+              _worksSection(context),
               const DefaultSpacer(),
               _focusSection(),
               const DefaultSpacer(),
@@ -60,17 +62,9 @@ class HomePage extends StatelessWidget {
           _textSpan('ridha', bold: true),
           _textSpan(
               ' is a software engineer/mobile developer (android & flutter developer) known for crafting sleek and user-friendly mobile applications. Holding a Bachelor\'s degree in '),
-          _linkSpan(
-            'https://if.unpas.ac.id',
-            'Informatics Engineering',
-            bold: true,
-          ),
+          _linkSpan('https://if.unpas.ac.id', 'Informatics Engineering'),
           _textSpan(' from '),
-          _linkSpan(
-            'https://www.unpas.ac.id',
-            'Universitas Pasundan',
-            bold: true,
-          ),
+          _linkSpan('https://www.unpas.ac.id', 'Universitas Pasundan'),
           _textSpan(
               ' and have approximately 2 years of experience in the field.'),
         ],
@@ -78,7 +72,7 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget _worksSection() {
+  Widget _worksSection(BuildContext context) {
     return RichText(
       text: TextSpan(
         style: GoogleFonts.fragmentMono(),
@@ -86,7 +80,12 @@ class HomePage extends StatelessWidget {
           _textSpan('You can check out some of '),
           _textSpan('ridha', bold: true),
           _textSpan('\'s work on the '),
-          _linkSpan('#', 'projects', bold: false, onTap: () {}),
+          _linkSpan(
+            '#',
+            'projects',
+            bold: false,
+            onTap: () => context.push(AppRoutes.projects),
+          ),
           _textSpan(' page.'),
         ],
       ),
@@ -142,7 +141,7 @@ class HomePage extends StatelessWidget {
         decoration: TextDecoration.underline,
       ),
       recognizer: TapGestureRecognizer()
-        ..onTap = onTap ?? () => canLaunchUrl(Uri.parse(url)),
+        ..onTap = onTap ?? () => launchUrl(Uri.parse(url)),
     );
   }
 }
