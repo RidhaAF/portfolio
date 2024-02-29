@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:ridhaaf_flutter/core/presentation/routes/app_pages.dart';
 
 void main() {
@@ -14,8 +15,13 @@ class MyApp extends StatelessWidget {
       title: 'ridha ahmad firdaus',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.deepPurple,
+        ).copyWith(
+          background: Colors.white,
+        ),
         useMaterial3: true,
+        fontFamily: GoogleFonts.jetBrainsMono().fontFamily,
       ),
       routes: AppPages.pages,
     );
