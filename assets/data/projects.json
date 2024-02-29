@@ -1,0 +1,188 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "name": "Good Art Studio",
+      "description": "Tugas Besar Mata Kuliah Internet dan Teknologi Web | HTML, CSS, JavaScript, Materialize CSS",
+      "date": "2018-12-01",
+      "image": "https://res.cloudinary.com/ridhaaf/image/upload/f_auto,q_auto/v1/portfolio/projects/rrzmveyz3m9tuggslfw3",
+      "url": "https://ridhaaf.github.io/GoodArtStudio/"
+    },
+    {
+      "id": 2,
+      "name": "AutoDrift25",
+      "description": "Tugas Besar Mata Kuliah Pemrograman Web | HTML, CSS, JavaScript, Materialize, PHP, MySQL",
+      "date": "2019-05-01",
+      "image": "https://res.cloudinary.com/ridhaaf/image/upload/f_auto,q_auto/v1/portfolio/projects/rxlxazt6seofa3ycwsh6",
+      "url": "https://github.com/RidhaAF/rekweb2020_183040083_tubespw"
+    },
+    {
+      "id": 3,
+      "name": "Wa-Pid-19",
+      "description": "Tugas Besar Mata Kuliah Interaksi Manusia Komputer | Prototyping Aplikasi Mobile dengan Figma",
+      "date": "2020-04-01",
+      "image": "https://res.cloudinary.com/ridhaaf/image/upload/f_auto,q_auto/v1/portfolio/projects/nh6mmex40j5kdli95jow",
+      "url": "https://www.figma.com/file/tAWx456tMPIFgHp9e9hy4M/WaPid-19"
+    },
+    {
+      "id": 4,
+      "name": "Tugas Besar Mata Kuliah Pembangunan Aplikasi Multimedia",
+      "description": "Nyantuy Production 2.0 | Tugas Besar Mata Kuliah Pembangunan Aplikasi Multimedia | Membuat Aplikasi Android dengan Adobe Animate (ActionScript)",
+      "date": "2020-05-01",
+      "image": "https://res.cloudinary.com/ridhaaf/image/upload/f_auto,q_auto/v1/portfolio/projects/zu2nmjxi3lmpgfr24if3",
+      "url": "https://youtu.be/P1tcR6kPomY"
+    },
+    {
+      "id": 5,
+      "name": "Nameless Store",
+      "description": "Tugas Besar Mata Kuliah Rekayasa Web | E-Commerce Website with PHP MVC framework (CodeIgniter 4), CSS framework (Bootstrap 4) & JavaScript",
+      "date": "2020-12-01",
+      "image": "https://res.cloudinary.com/ridhaaf/image/upload/f_auto,q_auto/v1/portfolio/projects/y32xsdqavs8kqbmerxob",
+      "url": "https://github.com/RidhaAF/nameless-store_master"
+    },
+    {
+      "id": 6,
+      "name": "FoodMarket App | BWA",
+      "description": "Full-Stack Mobile Application Development with Flutter and Back-End Development with Laravel 8",
+      "date": "2021-03-01",
+      "image": "https://res.cloudinary.com/ridhaaf/image/upload/f_auto,q_auto/v1/portfolio/projects/l1cwcixhvsfxrzp7bxob",
+      "url": "https://github.com/RidhaAF/food_market"
+    },
+    {
+      "id": 7,
+      "name": "Wisata Bandung Web | Dicoding",
+      "description": "Tourism Places Website with Flutter Web",
+      "date": "2021-05-01",
+      "image": "https://res.cloudinary.com/ridhaaf/image/upload/f_auto,q_auto/v1/portfolio/projects/egymmdx0p008qapajtfa",
+      "url": "https://ridhaaf.github.io/wisata_bandung_web/"
+    },
+    {
+      "id": 8,
+      "name": "Movie Info | Dicoding",
+      "description": "Movie Info App with Flutter for Dicoding Submission",
+      "date": "2021-05-01",
+      "image": "https://res.cloudinary.com/ridhaaf/image/upload/f_auto,q_auto/v1/portfolio/projects/o763hkgcttvo71hxlvxj",
+      "url": "https://github.com/RidhaAF/movie_app_dicoding"
+    },
+    {
+      "id": 9,
+      "name": "Calculator",
+      "description": "Calculator App with Flutter",
+      "date": "2021-05-01",
+      "image": "https://res.cloudinary.com/ridhaaf/image/upload/f_auto,q_auto/v1/portfolio/projects/pzconfyigbcmpil2qc3r",
+      "url": "https://github.com/RidhaAF/calculator_app"
+    },
+    {
+      "id": 10,
+      "name": "Covid-19 App",
+      "description": "Statistics Covid-19 App with Flutter using API from kawalcorona.com/api/",
+      "date": "2021-06-01",
+      "image": "https://res.cloudinary.com/ridhaaf/image/upload/f_auto,q_auto/v1/portfolio/projects/ipn0jgdfcjum1as9qy66",
+      "url": "https://github.com/RidhaAF/calculator_app"
+    },
+    {
+      "id": 11,
+      "name": "Shamo App | BWA",
+      "description": "Full-Stack Laravel Flutter: e-Commerce App with Flutter",
+      "date": "2021-06-01",
+      "image": "https://res.cloudinary.com/ridhaaf/image/upload/f_auto,q_auto/v1/portfolio/projects/rbwsqqcoy0wqpugz0xoi",
+      "url": "https://github.com/RidhaAF/shamo"
+    },
+    {
+      "id": 12,
+      "name": "SurveyAsia.id",
+      "description": "Developed surveyasia.id using Laravel 8, Blade and Bootstrap 5",
+      "date": "2021-08-01",
+      "image": "https://res.cloudinary.com/ridhaaf/image/upload/f_auto,q_auto/v1/portfolio/projects/tx85t3m1vcfsjclnlqmh",
+      "url": "https://surveyasia.id/"
+    },
+    {
+      "id": 13,
+      "name": "Airplane App | BWA",
+      "description": "Airplane App with Flutter 2.0, BLoC and Null Safety",
+      "date": "2022-02-01",
+      "image": "https://res.cloudinary.com/ridhaaf/image/upload/f_auto,q_auto/v1/portfolio/projects/yit2lxd3txmn9eir8j2o",
+      "url": "https://github.com/RidhaAF/airplane_app"
+    },
+    {
+      "id": 14,
+      "name": "PRM HMTIF-UNPAS | Back-End",
+      "description": "Final Project at Informatics Engineering Universitas Pasundan | Developed API & Admin Dashboard using Laravel 8 for Pemilu Raya Mahasiswa HMTIF-UNPAS | Pemilu Raya Mahasiswa HMTIF-UNPAS is an event for the election of the Chairman of HMTIF-UNPAS for the next 1 period.",
+      "date": "2021-09-01",
+      "image": "https://res.cloudinary.com/ridhaaf/image/upload/f_auto,q_auto/v1/portfolio/projects/owcjtmsn5daf6bnvkvzv",
+      "url": "https://github.com/RidhaAF/prm-hmtif-unpas-backend"
+    },
+    {
+      "id": 15,
+      "name": "PRM HMTIF-UNPAS",
+      "description": "Final Project at Informatics Engineering Universitas Pasundan | Developed Mobile App using Flutter for Pemilu Raya Mahasiswa HMTIF-UNPAS | Pemilu Raya Mahasiswa HMTIF-UNPAS is an event for the election of the Chairman of HMTIF-UNPAS for the next 1 period.",
+      "date": "2021-05-01",
+      "image": "https://res.cloudinary.com/ridhaaf/image/upload/f_auto,q_auto/v1/portfolio/projects/sirncpdnvea9cedkvd2h",
+      "url": "https://github.com/RidhaAF/prm_hmtif_unpas"
+    },
+    {
+      "id": 16,
+      "name": "UR - Self Order App",
+      "description": "UR - Self Order is a convenient app that simplifies the process of ordering food from your favorite restaurant. All you need to do is take a seat and place your order at the table, and your food will be promptly delivered. Created using Flutter",
+      "date": "2022-08-08",
+      "image": "https://res.cloudinary.com/ridhaaf/image/upload/f_auto,q_auto/v1/portfolio/projects/aawbvn3vl1klufmzcdup",
+      "url": "https://play.google.com/store/apps/details?id=com.urhub.android.app&hl=id"
+    },
+    {
+      "id": 17,
+      "name": "UR POS - App Kasir & Wirausaha",
+      "description": "UR POS is an application designed to help partners or merchants manage their point-of-sale operations, including order processing and report viewing. It's a tool that simplifies these tasks for businesses. Created using Flutter",
+      "date": "2022-08-08",
+      "image": "https://res.cloudinary.com/ridhaaf/image/upload/f_auto,q_auto/v1/portfolio/projects/tdehooble08p4suuhd51",
+      "url": "https://play.google.com/store/apps/details?id=com.urpartner&hl=in"
+    },
+    {
+      "id": 18,
+      "name": "Tic-Tac-Toe",
+      "description": "Tic-tac-toe game using React + Vite",
+      "date": "2023-08-01",
+      "image": "https://res.cloudinary.com/ridhaaf/image/upload/f_auto,q_auto/v1/portfolio/projects/nperyewo47p23vibx4dp",
+      "url": "https://tic-tac-toe-ridhaaf.vercel.app/"
+    },
+    {
+      "id": 19,
+      "name": "Shopping List",
+      "description": "Simple shopping list using React + Typescript + Vite",
+      "date": "2023-08-01",
+      "image": "https://res.cloudinary.com/ridhaaf/image/upload/f_auto,q_auto/v1/portfolio/projects/bz6920quijrdojqzpyvo",
+      "url": "https://shopping-list-ridhaaf.vercel.app/"
+    },
+    {
+      "id": 20,
+      "name": "Movie Time",
+      "description": "Movie Time is a movie recommendation application for users. Movie Time shows the latest, popular & upcoming movies/series. Created using Flutter",
+      "date": "2023-08-01",
+      "image": "https://res.cloudinary.com/ridhaaf/image/upload/f_auto,q_auto/v1/portfolio/projects/rpiiqr1qbvlsjn8lotbq",
+      "url": "https://play.google.com/store/apps/details?id=id.co.ridhaaf.movie_time"
+    },
+    {
+      "id": 21,
+      "name": "Al-Quran",
+      "description": "Al-Quran App using Flutter | API from https://api.quran.gading.dev/",
+      "date": "2023-08-01",
+      "image": "https://res.cloudinary.com/ridhaaf/image/upload/f_auto,q_auto/v1/portfolio/projects/ob4mr1lir98jb9ezdrgs",
+      "url": "https://play.google.com/store/apps/details?id=com.ridhaaf.al_quran"
+    },
+    {
+      "id": 22,
+      "name": "Air Quality Index",
+      "description": "This is a simple app that shows the air quality index of a city. The data is fetched from AirVisual API. Created using Flutter",
+      "date": "2023-08-01",
+      "image": "https://res.cloudinary.com/ridhaaf/image/upload/f_auto,q_auto/v1/portfolio/projects/zp4ko4qglz2wjnpvbaha",
+      "url": "https://play.google.com/store/apps/details?id=com.ridhaaf.air_quality_index"
+    },
+    {
+      "id": 23,
+      "name": "Rock Paper Scissors",
+      "description": "Rock Paper Scissors is a simple hand game that is often used to make quick decisions between two people. The game is typically played by two individuals who each simultaneously form one of three shapes with an outstretched hand. Created using Flutter",
+      "date": "2023-09-01",
+      "image": "https://res.cloudinary.com/ridhaaf/image/upload/f_auto,q_auto/v1/portfolio/projects/vfwgzsupnatm3foeo44d",
+      "url": "https://play.google.com/store/apps/details?id=com.ridhaaf.rock_paper_scissors"
+    }
+  ]
+}
