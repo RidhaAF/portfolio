@@ -11,19 +11,19 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'ridha ahmad firdaus',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.deepPurple,
+          seedColor: Colors.green.shade900,
         ).copyWith(
           background: Colors.white,
         ),
         useMaterial3: true,
         fontFamily: GoogleFonts.jetBrainsMono().fontFamily,
       ),
-      routes: AppPages.pages,
+      routerConfig: AppPages.pages,
     );
   }
 }
