@@ -1,13 +1,13 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:ridhaaf_flutter/core/presentation/widgets/app_body.dart';
-import 'package:ridhaaf_flutter/core/presentation/widgets/default_spacer.dart';
-import 'package:ridhaaf_flutter/core/utils/constants/app_constants.dart';
-import 'package:ridhaaf_flutter/core/utils/helpers/date_formatter.dart';
-import 'package:ridhaaf_flutter/core/utils/helpers/device_type.dart';
-import 'package:ridhaaf_flutter/feature/data/models/project/project_model.dart';
-import 'package:ridhaaf_flutter/feature/presentation/bloc/projects/projects_bloc.dart';
+import 'package:portfolio/core/presentation/widgets/app_body.dart';
+import 'package:portfolio/core/presentation/widgets/default_spacer.dart';
+import 'package:portfolio/core/utils/constants/app_constants.dart';
+import 'package:portfolio/core/utils/helpers/date_formatter.dart';
+import 'package:portfolio/core/utils/helpers/device_type.dart';
+import 'package:portfolio/feature/data/models/project/project_model.dart';
+import 'package:portfolio/feature/presentation/bloc/projects/projects_bloc.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ProjectsPage extends StatefulWidget {

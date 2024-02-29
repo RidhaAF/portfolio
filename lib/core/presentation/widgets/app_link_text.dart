@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ridhaaf_flutter/core/presentation/widgets/app_text.dart';
+import 'package:portfolio/core/presentation/widgets/app_text.dart';
 
 class AppLinkText extends StatelessWidget {
   final void Function()? onTap;

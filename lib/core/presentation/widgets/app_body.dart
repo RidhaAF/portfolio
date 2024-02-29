@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ridhaaf_flutter/core/presentation/widgets/app_copyright.dart';
+import 'package:portfolio/core/presentation/widgets/app_copyright.dart';
 
 class AppBody extends StatelessWidget {
   final Widget child;

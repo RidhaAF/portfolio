@@ -1,5 +1,5 @@
-import 'package:ridhaaf_flutter/feature/data/models/project/project_model.dart';
-import 'package:ridhaaf_flutter/feature/domain/repositories/project/project_repository.dart';
+import 'package:portfolio/feature/data/models/project/project_model.dart';
+import 'package:portfolio/feature/domain/repositories/project/project_repository.dart';
 
 class ProjectUseCase {
   final ProjectRepository _repository;

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ridhaaf_flutter/core/presentation/routes/app_pages.dart';
-import 'package:ridhaaf_flutter/di/injection.dart';
-import 'package:ridhaaf_flutter/feature/presentation/bloc/projects/projects_bloc.dart';
+import 'package:portfolio/core/presentation/routes/app_pages.dart';
+import 'package:portfolio/di/injection.dart';
+import 'package:portfolio/feature/presentation/bloc/projects/projects_bloc.dart';
 
 void main() {
   setupInjection();

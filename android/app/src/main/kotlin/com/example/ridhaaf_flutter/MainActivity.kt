@@ -1,4 +1,4 @@
-package com.example.ridhaaf_flutter
+package com.ridhaaf.portfolio
 
 import io.flutter.embedding.android.FlutterActivity
 

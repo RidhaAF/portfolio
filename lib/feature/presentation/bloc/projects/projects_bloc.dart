@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
-import 'package:ridhaaf_flutter/feature/data/models/project/project_model.dart';
-import 'package:ridhaaf_flutter/feature/domain/usecases/project/project_use_case.dart';
+import 'package:portfolio/feature/data/models/project/project_model.dart';
+import 'package:portfolio/feature/domain/usecases/project/project_use_case.dart';
 
 part 'projects_event.dart';
 part 'projects_state.dart';

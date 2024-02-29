@@ -2,11 +2,11 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ridhaaf_flutter/core/presentation/routes/app_routes.dart';
-import 'package:ridhaaf_flutter/core/presentation/widgets/app_body.dart';
-import 'package:ridhaaf_flutter/core/presentation/widgets/app_link_text.dart';
-import 'package:ridhaaf_flutter/core/presentation/widgets/default_spacer.dart';
-import 'package:ridhaaf_flutter/core/utils/constants/app_constants.dart';
+import 'package:portfolio/core/presentation/routes/app_routes.dart';
+import 'package:portfolio/core/presentation/widgets/app_body.dart';
+import 'package:portfolio/core/presentation/widgets/app_link_text.dart';
+import 'package:portfolio/core/presentation/widgets/default_spacer.dart';
+import 'package:portfolio/core/utils/constants/app_constants.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class HomePage extends StatelessWidget {
