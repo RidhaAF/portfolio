@@ -20,14 +20,16 @@ class ProjectsPage extends StatelessWidget {
   }
 
   Widget _projectsGrid(BuildContext context) {
+    final int crossAxisCount = isMobile(context)
+        ? 1
+        : isTablet(context)
+            ? 2
+            : 3;
+
     return GridView.builder(
       padding: const EdgeInsets.symmetric(vertical: AppConstants.defaultMargin),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: isMobile(context)
-            ? 1
-            : isTablet(context)
-                ? 2
-                : 3,
+        crossAxisCount: crossAxisCount,
         mainAxisSpacing: AppConstants.defaultMargin,
         crossAxisSpacing: AppConstants.defaultMargin,
         childAspectRatio: 0.7,
@@ -55,8 +57,8 @@ class ProjectsPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               _projectImage(),
-              Container(
-                margin: const EdgeInsets.all(AppConstants.defaultMargin),
+              Padding(
+                padding: const EdgeInsets.all(AppConstants.defaultMargin),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
