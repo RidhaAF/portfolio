@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ridhaaf_flutter/core/presentation/widgets/app_body.dart';
 import 'package:ridhaaf_flutter/core/presentation/widgets/default_spacer.dart';
 import 'package:ridhaaf_flutter/core/utils/constants/app_constants.dart';
+import 'package:ridhaaf_flutter/core/utils/helpers/date_formatter.dart';
 import 'package:ridhaaf_flutter/core/utils/helpers/device_type.dart';
 import 'package:ridhaaf_flutter/feature/data/models/project/project_model.dart';
 import 'package:ridhaaf_flutter/feature/presentation/bloc/projects/projects_bloc.dart';
@@ -116,6 +117,8 @@ class _ProjectsPageState extends State<ProjectsPage> {
                     _projectName(project),
                     const DefaultSpacer(size: 4),
                     _projectDescription(project),
+                    const DefaultSpacer(size: 4),
+                    _projectDate(project),
                   ],
                 ),
               ),
@@ -164,6 +167,19 @@ class _ProjectsPageState extends State<ProjectsPage> {
       softWrap: true,
       maxLines: 3,
       overflow: TextOverflow.ellipsis,
+    );
+  }
+
+  Widget _projectDate(Project project) {
+    final String formattedDate = monthYearFormatter(project.date);
+
+    return Text(
+      formattedDate,
+      style: TextStyle(
+        color: Colors.grey.shade500,
+        fontSize: 10,
+        fontWeight: AppConstants.light,
+      ),
     );
   }
 }
