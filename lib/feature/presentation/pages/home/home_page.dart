@@ -31,14 +31,14 @@ class HomePage extends StatelessWidget {
               const DefaultSpacer(),
               _contactSection('ridhaaf@gmail.com', 'contact'),
               const DefaultSpacer(size: 4),
-              _linkSection('www.linkedin.com/in/ridhaaf', 'linkedin'),
+              _linkSection('https://www.linkedin.com/in/ridhaaf', 'linkedin'),
               const DefaultSpacer(size: 4),
-              _linkSection('github.com/ridhaaf', 'github'),
+              _linkSection('https://github.com/ridhaaf', 'github'),
               const DefaultSpacer(size: 4),
-              _linkSection(
-                  'www.instagram.com/portfolionya.ridhaaf', 'instagram'),
+              _linkSection('https://www.instagram.com/portfolionya.ridhaaf',
+                  'instagram'),
               const DefaultSpacer(size: 4),
-              _linkSection('x.com/ridhaaf_', 'x'),
+              _linkSection('https://x.com/ridhaaf_', 'x'),
             ],
           ),
         ),
@@ -114,7 +114,7 @@ class HomePage extends StatelessWidget {
 
   Widget _linkSection(String path, String text) {
     return AppLinkText(
-      onTap: () => launchUrl(Uri(scheme: 'https', path: path)),
+      onTap: () => launchUrl(Uri.parse(path)),
       text: text,
     );
   }
