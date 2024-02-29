@@ -58,6 +58,7 @@ flutter:
   assets:
     - assets/
     - assets/data/
+    - assets/data/projects.json
     - assets/images/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg

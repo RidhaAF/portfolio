@@ -82547,7 +82547,7 @@ var $async$k8=A.G(function(a,b){if(a===1)return A.H(b,r)
 while(true)switch(s){case 0:p=A
 o=B.b3
 s=3
-return A.M($.nb().akR("data/projects.json"),$async$k8)
+return A.M($.nb().akR("assets/data/projects.json"),$async$k8)
 case 3:q=p.aGy(o.RK(b,null))
 s=1
 break
