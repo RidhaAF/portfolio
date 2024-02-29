@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ridhaaf_flutter/core/presentation/widgets/app_copyright.dart';
 
 class AppBody extends StatelessWidget {
   final Widget child;
@@ -6,11 +7,17 @@ class AppBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: SizedBox(
-        width: MediaQuery.sizeOf(context).width * 0.80,
-        child: child,
-      ),
+    return Stack(
+      alignment: Alignment.bottomRight,
+      children: [
+        Center(
+          child: SizedBox(
+            width: MediaQuery.sizeOf(context).width * 0.80,
+            child: child,
+          ),
+        ),
+        const AppCopyright(),
+      ],
     );
   }
 }
