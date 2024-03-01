@@ -17,7 +17,9 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       body: AppBody(
         child: SingleChildScrollView(
-          padding: const EdgeInsets.all(AppConstants.defaultMargin),
+          padding: const EdgeInsets.symmetric(
+            vertical: AppConstants.defaultMargin * 2,
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -57,7 +59,7 @@ class HomePage extends StatelessWidget {
   Widget _introductionSection() {
     return RichText(
       text: TextSpan(
-        style: GoogleFonts.fragmentMono(),
+        style: GoogleFonts.jetBrainsMono(),
         children: [
           _textSpan('ridha', bold: true),
           _textSpan(
@@ -75,7 +77,7 @@ class HomePage extends StatelessWidget {
   Widget _worksSection(BuildContext context) {
     return RichText(
       text: TextSpan(
-        style: GoogleFonts.fragmentMono(),
+        style: GoogleFonts.jetBrainsMono(),
         children: [
           _textSpan('You can check out some of '),
           _textSpan('ridha', bold: true),
@@ -124,6 +126,7 @@ class HomePage extends StatelessWidget {
       text: text,
       style: TextStyle(
         fontWeight: bold ? AppConstants.bold : AppConstants.regular,
+        height: 1.5,
       ),
     );
   }
@@ -139,6 +142,7 @@ class HomePage extends StatelessWidget {
       style: TextStyle(
         fontWeight: bold ? AppConstants.bold : AppConstants.regular,
         decoration: TextDecoration.underline,
+        height: 1.5,
       ),
       recognizer: TapGestureRecognizer()
         ..onTap = onTap ?? () => launchUrl(Uri.parse(url)),
