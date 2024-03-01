@@ -78,7 +78,9 @@ class _ProjectsPageState extends State<ProjectsPage> {
     final List<Project> reversedProjects = projects.reversed.toList();
 
     return GridView.builder(
-      padding: const EdgeInsets.symmetric(vertical: AppConstants.defaultMargin),
+      padding: const EdgeInsets.symmetric(
+        vertical: AppConstants.defaultMargin * 2,
+      ),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: crossAxisCount,
         mainAxisSpacing: AppConstants.defaultMargin,
@@ -132,8 +134,12 @@ class _ProjectsPageState extends State<ProjectsPage> {
   Widget _projectImage(Project project) {
     return CachedNetworkImage(
       imageUrl: project.image,
-      progressIndicatorBuilder: (context, url, progress) =>
-          const CircularProgressIndicator.adaptive(),
+      progressIndicatorBuilder: (context, url, progress) => const Padding(
+        padding: EdgeInsets.symmetric(
+          vertical: AppConstants.defaultMargin,
+        ),
+        child: CircularProgressIndicator.adaptive(),
+      ),
       errorWidget: (context, url, error) => Image.asset(
         'assets/images/image_load_failed.png',
         width: double.infinity,
