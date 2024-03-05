@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/core/utils/constants/app_constants.dart';
-import 'package:portfolio/core/utils/helpers/is_dark_mode.dart';
+import 'package:portfolio/core/utils/helpers/theme_helper.dart';
 
 class AppCopyright extends StatelessWidget {
   const AppCopyright({super.key});
@@ -16,7 +16,7 @@ class AppCopyright extends StatelessWidget {
       Colors.black87.withOpacity(1),
     ];
     final List<Color> gradientColors =
-        isDarkMode(context) ? darkModeGradient : lightModeGradient;
+        ThemeHelper.isDarkMode(context) ? darkModeGradient : lightModeGradient;
     final String year = DateTime.now().year.toString();
 
     return Container(

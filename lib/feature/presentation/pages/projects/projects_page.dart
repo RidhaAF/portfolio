@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:portfolio/core/presentation/widgets/app_body.dart';
+import 'package:portfolio/core/presentation/widgets/dark_mode_button.dart';
 import 'package:portfolio/core/presentation/widgets/default_spacer.dart';
 import 'package:portfolio/core/utils/constants/app_constants.dart';
 import 'package:portfolio/core/utils/helpers/date_formatter.dart';
@@ -33,6 +34,9 @@ class _ProjectsPageState extends State<ProjectsPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('ridha\'s projects'),
+        actions: const [
+          DarkModeButton(),
+        ],
       ),
       body: AppBody(
         child: RefreshIndicator(
