@@ -8,8 +8,8 @@ class AppTheme {
     brightness: Brightness.light,
     scaffoldBackgroundColor: Colors.white,
     primaryColor: Colors.white,
-    colorScheme: const ColorScheme.light(
-      primary: Colors.white,
+    colorScheme: ColorScheme.light(
+      primary: Colors.green.shade900,
       secondary: Colors.black54,
       tertiary: Colors.black38,
       background: Colors.white,
@@ -112,8 +112,8 @@ class AppTheme {
     brightness: Brightness.dark,
     scaffoldBackgroundColor: Colors.black87,
     primaryColor: Colors.black87,
-    colorScheme: const ColorScheme.dark(
-      primary: Colors.black87,
+    colorScheme: ColorScheme.dark(
+      primary: Colors.green.shade900,
       secondary: Colors.white60,
       tertiary: Colors.white38,
       background: Colors.black87,
