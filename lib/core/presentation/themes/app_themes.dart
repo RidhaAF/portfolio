@@ -7,9 +7,9 @@ class AppTheme {
     useMaterial3: true,
     brightness: Brightness.light,
     scaffoldBackgroundColor: Colors.white,
-    primaryColor: Colors.green.shade900,
-    colorScheme: ColorScheme.light(
-      primary: Colors.green.shade900,
+    primaryColor: Colors.white,
+    colorScheme: const ColorScheme.light(
+      primary: Colors.white,
       secondary: Colors.black54,
       tertiary: Colors.black38,
       background: Colors.white,
@@ -96,7 +96,7 @@ class AppTheme {
     appBarTheme: AppBarTheme(
       titleTextStyle: GoogleFonts.jetBrainsMono(
         color: Colors.black87,
-        fontSize: 18,
+        fontSize: 16,
       ),
     ),
     cardTheme: CardTheme(
@@ -111,9 +111,9 @@ class AppTheme {
     useMaterial3: true,
     brightness: Brightness.dark,
     scaffoldBackgroundColor: Colors.black87,
-    primaryColor: Colors.green.shade900,
-    colorScheme: ColorScheme.dark(
-      primary: Colors.green.shade900,
+    primaryColor: Colors.black87,
+    colorScheme: const ColorScheme.dark(
+      primary: Colors.black87,
       secondary: Colors.white60,
       tertiary: Colors.white38,
       background: Colors.black87,
@@ -200,7 +200,7 @@ class AppTheme {
     appBarTheme: AppBarTheme(
       titleTextStyle: GoogleFonts.jetBrainsMono(
         color: Colors.white,
-        fontSize: 18,
+        fontSize: 16,
       ),
     ),
     cardTheme: CardTheme(
