@@ -1,22 +1,23 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/core/utils/constants/app_constants.dart';
-import 'package:portfolio/core/utils/helpers/theme_helper.dart';
 
 class AppCopyright extends StatelessWidget {
   const AppCopyright({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final List<Color> lightModeGradient = [
+    final bool isDark = AdaptiveTheme.of(context).mode.isDark;
+    List<Color> lightModeGradient = [
       Colors.white.withOpacity(0.01),
       Colors.white.withOpacity(1),
     ];
-    final List<Color> darkModeGradient = [
+    List<Color> darkModeGradient = [
       Colors.black87.withOpacity(0.01),
       Colors.black87.withOpacity(1),
     ];
     final List<Color> gradientColors =
-        ThemeHelper.isDarkMode(context) ? darkModeGradient : lightModeGradient;
+        isDark ? darkModeGradient : lightModeGradient;
     final String year = DateTime.now().year.toString();
 
     return Container(

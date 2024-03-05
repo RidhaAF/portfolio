@@ -7,8 +7,8 @@ class DarkModeButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bool dark = ThemeHelper.isDarkMode(context);
-    final Icon icon = dark
+    final bool isDark = AdaptiveTheme.of(context).mode.isDark;
+    final Icon icon = isDark
         ? Icon(
             Icons.light_mode_rounded,
             color: Colors.yellow.shade600,
@@ -19,15 +19,9 @@ class DarkModeButton extends StatelessWidget {
           );
 
     return IconButton(
-      onPressed: () {
-        if (dark) {
-          AdaptiveTheme.of(context).setLight();
-        } else {
-          AdaptiveTheme.of(context).setDark();
-        }
-      },
+      onPressed: () => ThemeHelper.toggleDarkMode(context),
       icon: icon,
-      tooltip: dark ? 'light mode' : 'dark mode',
+      tooltip: isDark ? 'light mode' : 'dark mode',
     );
   }
 }

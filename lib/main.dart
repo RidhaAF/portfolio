@@ -1,15 +1,18 @@
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:portfolio/core/presentation/routes/app_pages.dart';
 import 'package:portfolio/core/presentation/themes/app_themes.dart';
+import 'package:portfolio/core/utils/helpers/theme_helper.dart';
 import 'package:portfolio/di/injection.dart';
 import 'package:portfolio/feature/presentation/bloc/projects/projects_bloc.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   setupInjection();
-  final savedThemeMode = await AdaptiveTheme.getThemeMode();
+  await GetStorage.init();
+  final savedThemeMode = await ThemeHelper.getSavedThemeMode();
   runApp(MyApp(savedThemeMode: savedThemeMode));
 }
 
