@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:portfolio/core/presentation/widgets/app_body.dart';
+import 'package:portfolio/core/presentation/widgets/dark_mode_button.dart';
 import 'package:portfolio/core/presentation/widgets/default_spacer.dart';
 import 'package:portfolio/core/utils/constants/app_constants.dart';
 import 'package:portfolio/core/utils/helpers/date_formatter.dart';
@@ -33,6 +34,9 @@ class _ProjectsPageState extends State<ProjectsPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('ridha\'s projects'),
+        actions: const [
+          DarkModeButton(),
+        ],
       ),
       body: AppBody(
         child: RefreshIndicator(
@@ -101,10 +105,6 @@ class _ProjectsPageState extends State<ProjectsPage> {
       radius: AppConstants.defaultRadius,
       borderRadius: BorderRadius.circular(AppConstants.defaultRadius),
       child: Card(
-        color: Colors.white,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(AppConstants.defaultRadius),
-        ),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(AppConstants.defaultRadius),
           child: Column(
@@ -167,7 +167,7 @@ class _ProjectsPageState extends State<ProjectsPage> {
     return Text(
       project.description,
       style: TextStyle(
-        color: Colors.grey.shade600,
+        color: Theme.of(context).colorScheme.secondary,
         fontSize: 12,
       ),
       softWrap: true,
@@ -182,7 +182,7 @@ class _ProjectsPageState extends State<ProjectsPage> {
     return Text(
       formattedDate,
       style: TextStyle(
-        color: Colors.grey.shade500,
+        color: Theme.of(context).colorScheme.tertiary,
         fontSize: 10,
         fontWeight: AppConstants.light,
       ),

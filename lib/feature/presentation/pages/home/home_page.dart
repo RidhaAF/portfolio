@@ -1,7 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/core/presentation/routes/app_routes.dart';
 import 'package:portfolio/core/presentation/widgets/app_body.dart';
 import 'package:portfolio/core/presentation/widgets/app_link_text.dart';
@@ -57,9 +56,8 @@ class HomePage extends StatelessWidget {
   }
 
   Widget _introductionSection() {
-    return RichText(
-      text: TextSpan(
-        style: GoogleFonts.jetBrainsMono(),
+    return SelectableText.rich(
+      TextSpan(
         children: [
           _textSpan('ridha', bold: true),
           _textSpan(
@@ -75,9 +73,8 @@ class HomePage extends StatelessWidget {
   }
 
   Widget _worksSection(BuildContext context) {
-    return RichText(
-      text: TextSpan(
-        style: GoogleFonts.jetBrainsMono(),
+    return SelectableText.rich(
+      TextSpan(
         children: [
           _textSpan('You can check out some of '),
           _textSpan('ridha', bold: true),
@@ -95,9 +92,8 @@ class HomePage extends StatelessWidget {
   }
 
   Widget _focusSection() {
-    return RichText(
-      text: TextSpan(
-        style: GoogleFonts.jetBrainsMono(),
+    return SelectableText.rich(
+      TextSpan(
         children: [
           _textSpan('ridha', bold: true),
           _textSpan(
@@ -125,8 +121,8 @@ class HomePage extends StatelessWidget {
     return TextSpan(
       text: text,
       style: TextStyle(
+        fontSize: 12,
         fontWeight: bold ? AppConstants.bold : AppConstants.regular,
-        height: 1.5,
       ),
     );
   }
@@ -140,9 +136,9 @@ class HomePage extends StatelessWidget {
     return TextSpan(
       text: text,
       style: TextStyle(
+        fontSize: 12,
         fontWeight: bold ? AppConstants.bold : AppConstants.regular,
         decoration: TextDecoration.underline,
-        height: 1.5,
       ),
       recognizer: TapGestureRecognizer()
         ..onTap = onTap ?? () => launchUrl(Uri.parse(url)),
