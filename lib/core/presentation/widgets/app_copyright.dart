@@ -1,11 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/core/utils/constants/app_constants.dart';
+import 'package:portfolio/core/utils/helpers/is_dark_mode.dart';
 
 class AppCopyright extends StatelessWidget {
   const AppCopyright({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final List<Color> lightModeGradient = [
+      Colors.white.withOpacity(0.01),
+      Colors.white.withOpacity(1),
+    ];
+    final List<Color> darkModeGradient = [
+      Colors.black87.withOpacity(0.01),
+      Colors.black87.withOpacity(1),
+    ];
+    final List<Color> gradientColors =
+        isDarkMode(context) ? darkModeGradient : lightModeGradient;
     final String year = DateTime.now().year.toString();
 
     return Container(
@@ -13,10 +24,7 @@ class AppCopyright extends StatelessWidget {
       height: 32,
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [
-            Colors.white.withOpacity(0.01),
-            Colors.white.withOpacity(1),
-          ],
+          colors: gradientColors,
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
         ),

@@ -17,6 +17,7 @@ class AppText extends StatelessWidget {
     return Text(
       text,
       style: TextStyle(
+        fontSize: 12,
         fontWeight: bold ? AppConstants.bold : AppConstants.medium,
         decoration: underline ? TextDecoration.underline : TextDecoration.none,
       ),
