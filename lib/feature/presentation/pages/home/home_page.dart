@@ -5,6 +5,7 @@ import 'package:portfolio/core/presentation/widgets/app_body.dart';
 import 'package:portfolio/core/presentation/widgets/app_link_text.dart';
 import 'package:portfolio/core/presentation/widgets/default_spacer.dart';
 import 'package:portfolio/core/utils/constants/app_constants.dart';
+import 'package:portfolio/core/utils/constants/profile_constant.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class HomePage extends StatelessWidget {
@@ -29,16 +30,9 @@ class HomePage extends StatelessWidget {
               const DefaultSpacer(),
               _focusSection(),
               const DefaultSpacer(),
-              _contactSection('ridhaaf@gmail.com', 'contact'),
-              const DefaultSpacer(size: 4),
-              _linkSection('https://www.linkedin.com/in/ridhaaf', 'linkedin'),
-              const DefaultSpacer(size: 4),
-              _linkSection('https://github.com/ridhaaf', 'github'),
-              const DefaultSpacer(size: 4),
-              _linkSection('https://www.instagram.com/portfolionya.ridhaaf',
-                  'instagram'),
-              const DefaultSpacer(size: 4),
-              _linkSection('https://x.com/ridhaaf_', 'x'),
+              _contactSection(ProfileConstant.email, 'contact'),
+              const DefaultSpacer(size: AppConstants.defaultMargin / 4),
+              _profilesSection(),
             ],
           ),
         ),
@@ -58,7 +52,7 @@ class HomePage extends StatelessWidget {
     return SelectableText.rich(
       TextSpan(
         children: [
-          _textSpan('ridha', bold: true),
+          _textSpan(ProfileConstant.name, bold: true),
           _textSpan(
               ' is a software engineer/mobile developer (android & flutter developer) known for crafting sleek and user-friendly mobile applications. Holding a Bachelor\'s degree in '),
           _linkSpan('https://if.unpas.ac.id', 'Informatics Engineering'),
@@ -76,7 +70,7 @@ class HomePage extends StatelessWidget {
       TextSpan(
         children: [
           _textSpan('You can check out some of '),
-          _textSpan('ridha', bold: true),
+          _textSpan(ProfileConstant.name, bold: true),
           _textSpan('\'s work on the '),
           _linkSpan(
             '#',
@@ -94,7 +88,7 @@ class HomePage extends StatelessWidget {
     return SelectableText.rich(
       TextSpan(
         children: [
-          _textSpan('ridha', bold: true),
+          _textSpan(ProfileConstant.name, bold: true),
           _textSpan(
               ' is currently focusing on mobile development, especially in the field of android and flutter.'),
         ],
@@ -106,6 +100,19 @@ class HomePage extends StatelessWidget {
     return AppLinkText(
       onTap: () => launchUrl(Uri(scheme: 'mailto', path: email)),
       text: text,
+    );
+  }
+
+  Widget _profilesSection() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: ProfileConstant.profiles
+          .map((profile) => Padding(
+                padding: const EdgeInsets.symmetric(
+                    vertical: AppConstants.defaultMargin / 4),
+                child: _linkSection(profile.url, profile.name),
+              ))
+          .toList(),
     );
   }
 
