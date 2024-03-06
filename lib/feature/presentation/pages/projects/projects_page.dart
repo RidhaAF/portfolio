@@ -1,15 +1,12 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:portfolio/core/presentation/widgets/app_body.dart';
+import 'package:portfolio/core/presentation/widgets/app_loading_indicator.dart';
 import 'package:portfolio/core/presentation/widgets/dark_mode_button.dart';
-import 'package:portfolio/core/presentation/widgets/default_spacer.dart';
-import 'package:portfolio/core/utils/constants/app_constants.dart';
-import 'package:portfolio/core/utils/helpers/date_formatter.dart';
-import 'package:portfolio/core/utils/helpers/device_type.dart';
+import 'package:portfolio/core/presentation/widgets/error_text.dart';
+import 'package:portfolio/core/presentation/widgets/projects_grid.dart';
 import 'package:portfolio/feature/data/models/project/project_model.dart';
 import 'package:portfolio/feature/presentation/bloc/projects/projects_bloc.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class ProjectsPage extends StatefulWidget {
   const ProjectsPage({super.key});
@@ -54,147 +51,17 @@ class _ProjectsPageState extends State<ProjectsPage> {
     return BlocBuilder<ProjectsBloc, ProjectsState>(
       builder: (context, state) {
         if (state is ProjectsLoading) {
-          return const Center(
-            child: CircularProgressIndicator.adaptive(),
-          );
+          return const AppLoadingIndicator();
         } else if (state is ProjectsLoaded) {
           final ProjectModel projectsModel = state.projectsModel;
 
-          return _projectsGrid(context, projectsModel);
+          return ProjectsGrid(projectsModel: projectsModel);
         } else if (state is ProjectsError) {
-          return Center(
-            child: Text(state.message),
-          );
+          return ErrorText(message: state.message);
         }
 
         return const SizedBox.shrink();
       },
-    );
-  }
-
-  Widget _projectsGrid(BuildContext context, ProjectModel projectsModel) {
-    final int crossAxisCount = isMobile(context)
-        ? 1
-        : isTablet(context)
-            ? 2
-            : 3;
-    final List<Project> projects = projectsModel.projects;
-    final List<Project> reversedProjects = projects.reversed.toList();
-
-    return GridView.builder(
-      padding: const EdgeInsets.symmetric(
-        vertical: AppConstants.defaultMargin * 2,
-      ),
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: crossAxisCount,
-        mainAxisSpacing: AppConstants.defaultMargin,
-        crossAxisSpacing: AppConstants.defaultMargin,
-        childAspectRatio: 0.7,
-      ),
-      itemCount: reversedProjects.length,
-      itemBuilder: (context, i) {
-        final Project project = reversedProjects[i];
-        return _projectCard(context, project);
-      },
-    );
-  }
-
-  Widget _projectCard(BuildContext context, Project project) {
-    return InkWell(
-      onTap: () => launchUrl(Uri.parse(project.url)),
-      radius: AppConstants.defaultRadius,
-      borderRadius: BorderRadius.circular(AppConstants.defaultRadius),
-      child: Card(
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(AppConstants.defaultRadius),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              _projectImage(project),
-              Padding(
-                padding: const EdgeInsets.all(AppConstants.defaultMargin),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    _projectName(project),
-                    const DefaultSpacer(size: 4),
-                    _projectDescription(project),
-                    const DefaultSpacer(size: 4),
-                    _projectDate(project),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget _projectImage(Project project) {
-    const double height = 296;
-
-    return CachedNetworkImage(
-      imageUrl: project.image,
-      placeholder: (context, url) => Container(
-        color: Theme.of(context).colorScheme.tertiary,
-        width: double.infinity,
-        height: height,
-        child: const Center(
-          child: CircularProgressIndicator.adaptive(),
-        ),
-      ),
-      errorWidget: (context, url, error) => Container(
-        color: Theme.of(context).colorScheme.tertiary,
-        child: Image.asset(
-          'assets/images/image_load_failed.png',
-          width: double.infinity,
-          height: height,
-          fit: BoxFit.cover,
-        ),
-      ),
-      width: double.infinity,
-      height: height,
-      fit: BoxFit.cover,
-      useOldImageOnUrlChange: true,
-    );
-  }
-
-  Widget _projectName(Project project) {
-    return Text(
-      project.name,
-      style: const TextStyle(
-        fontSize: 18,
-        fontWeight: FontWeight.bold,
-      ),
-      maxLines: 1,
-      overflow: TextOverflow.ellipsis,
-    );
-  }
-
-  Widget _projectDescription(Project project) {
-    return Text(
-      project.description,
-      style: TextStyle(
-        color: Theme.of(context).colorScheme.secondary,
-        fontSize: 12,
-      ),
-      softWrap: true,
-      maxLines: 3,
-      overflow: TextOverflow.ellipsis,
-    );
-  }
-
-  Widget _projectDate(Project project) {
-    final String formattedDate = monthYearFormatter(project.date);
-
-    return Text(
-      formattedDate,
-      style: TextStyle(
-        color: Theme.of(context).colorScheme.tertiary,
-        fontSize: 10,
-        fontWeight: AppConstants.light,
-      ),
     );
   }
 }
