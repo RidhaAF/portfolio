@@ -1,6 +1,5 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:portfolio/core/presentation/routes/app_routes.dart';
 import 'package:portfolio/core/presentation/widgets/app_body.dart';
 import 'package:portfolio/core/presentation/widgets/app_link_text.dart';
@@ -83,7 +82,7 @@ class HomePage extends StatelessWidget {
             '#',
             'projects',
             bold: false,
-            onTap: () => context.push(AppRoutes.projects),
+            onTap: () => Navigator.pushNamed(context, AppRoutes.projects),
           ),
           _textSpan(' page.'),
         ],

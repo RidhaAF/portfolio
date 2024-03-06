@@ -7,10 +7,12 @@ import 'package:portfolio/core/presentation/themes/app_themes.dart';
 import 'package:portfolio/core/utils/helpers/theme_helper.dart';
 import 'package:portfolio/di/injection.dart';
 import 'package:portfolio/feature/presentation/bloc/projects/projects_bloc.dart';
+import 'package:url_strategy/url_strategy.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   setupInjection();
+  setPathUrlStrategy();
   await GetStorage.init();
   final savedThemeMode = await ThemeHelper.getSavedThemeMode();
   runApp(MyApp(savedThemeMode: savedThemeMode));
@@ -32,12 +34,12 @@ class MyApp extends StatelessWidget {
         light: AppTheme.light,
         dark: AppTheme.dark,
         initial: savedThemeMode ?? AdaptiveThemeMode.system,
-        builder: (theme, darkTheme) => MaterialApp.router(
+        builder: (theme, darkTheme) => MaterialApp(
           title: 'ridha ahmad firdaus',
           debugShowCheckedModeBanner: false,
           theme: theme,
           darkTheme: darkTheme,
-          routerConfig: AppPages.pages,
+          routes: AppPages.pages,
         ),
       ),
     );
