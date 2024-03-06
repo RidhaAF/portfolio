@@ -132,20 +132,29 @@ class _ProjectsPageState extends State<ProjectsPage> {
   }
 
   Widget _projectImage(Project project) {
+    const double height = 296;
+
     return CachedNetworkImage(
       imageUrl: project.image,
-      progressIndicatorBuilder: (context, url, progress) => const Padding(
-        padding: EdgeInsets.symmetric(
-          vertical: AppConstants.defaultMargin,
-        ),
-        child: CircularProgressIndicator.adaptive(),
-      ),
-      errorWidget: (context, url, error) => Image.asset(
-        'assets/images/image_load_failed.png',
+      placeholder: (context, url) => Container(
+        color: Theme.of(context).colorScheme.tertiary,
         width: double.infinity,
-        fit: BoxFit.cover,
+        height: height,
+        child: const Center(
+          child: CircularProgressIndicator.adaptive(),
+        ),
+      ),
+      errorWidget: (context, url, error) => Container(
+        color: Theme.of(context).colorScheme.tertiary,
+        child: Image.asset(
+          'assets/images/image_load_failed.png',
+          width: double.infinity,
+          height: height,
+          fit: BoxFit.cover,
+        ),
       ),
       width: double.infinity,
+      height: height,
       fit: BoxFit.cover,
       useOldImageOnUrlChange: true,
     );
