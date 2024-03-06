@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:portfolio/core/presentation/routes/app_routes.dart';
 import 'package:portfolio/core/presentation/widgets/app_copyright.dart';
 import 'package:portfolio/core/presentation/widgets/dark_mode_button.dart';
 import 'package:portfolio/core/utils/constants/app_constants.dart';
@@ -18,7 +19,7 @@ class AppBody extends StatelessWidget {
             child: child,
           ),
         ),
-        ModalRoute.of(context)?.settings.name == 'home'
+        ModalRoute.of(context)?.settings.name == AppRoutes.home
             ? const Align(
                 alignment: Alignment.topRight,
                 child: Padding(
