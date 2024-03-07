@@ -11,32 +11,31 @@ class ProjectImage extends StatelessWidget {
   Widget build(BuildContext context) {
     final String image = project.image;
     const double imageWidth = double.infinity;
-    const double imageHeight = 296;
     const BoxFit imageFit = BoxFit.cover;
     const String failedImage = 'assets/images/image_load_failed.png';
     final Color tertiaryColor = Theme.of(context).colorScheme.tertiary;
 
-    return CachedNetworkImage(
-      imageUrl: image,
-      placeholder: (context, url) => Container(
-        color: tertiaryColor,
-        width: imageWidth,
-        height: imageHeight,
-        child: const AppLoadingIndicator(),
-      ),
-      errorWidget: (context, url, error) => Container(
-        color: tertiaryColor,
-        child: Image.asset(
-          failedImage,
+    return AspectRatio(
+      aspectRatio: 1,
+      child: CachedNetworkImage(
+        imageUrl: image,
+        placeholder: (context, url) => Container(
+          color: tertiaryColor,
           width: imageWidth,
-          height: imageHeight,
-          fit: imageFit,
+          child: const AppLoadingIndicator(),
         ),
+        errorWidget: (context, url, error) => Container(
+          color: tertiaryColor,
+          child: Image.asset(
+            failedImage,
+            width: imageWidth,
+            fit: imageFit,
+          ),
+        ),
+        width: imageWidth,
+        fit: imageFit,
+        useOldImageOnUrlChange: true,
       ),
-      width: imageWidth,
-      height: imageHeight,
-      fit: imageFit,
-      useOldImageOnUrlChange: true,
     );
   }
 }

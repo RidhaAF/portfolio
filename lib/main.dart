@@ -34,12 +34,12 @@ class MyApp extends StatelessWidget {
         light: AppTheme.light,
         dark: AppTheme.dark,
         initial: savedThemeMode ?? AdaptiveThemeMode.system,
-        builder: (theme, darkTheme) => MaterialApp(
+        builder: (theme, darkTheme) => MaterialApp.router(
           title: 'ridha ahmad firdaus',
           debugShowCheckedModeBanner: false,
           theme: theme,
           darkTheme: darkTheme,
-          routes: AppPages.pages,
+          routerConfig: AppPages.pages,
         ),
       ),
     );

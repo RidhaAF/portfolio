@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:portfolio/core/presentation/routes/app_routes.dart';
 import 'package:portfolio/core/presentation/widgets/app_body.dart';
 import 'package:portfolio/core/presentation/widgets/contact_section.dart';
@@ -48,14 +49,14 @@ class HomePage extends StatelessWidget {
         children: [
           TextSpanHelper.textSpan(ProfileConstant.name, bold: true),
           TextSpanHelper.textSpan(
-              ' is a software engineer/mobile developer (android & flutter developer) known for crafting sleek and user-friendly mobile applications. Holding a Bachelor\'s degree in '),
+              ' is a software engineer/mobile developer (android & flutter developer) known for crafting sleek and user-friendly mobile applications. He holds a Bachelor\'s degree in '),
           TextSpanHelper.linkSpan(
               'https://if.unpas.ac.id', 'Informatics Engineering'),
           TextSpanHelper.textSpan(' from '),
           TextSpanHelper.linkSpan(
               'https://www.unpas.ac.id', 'Universitas Pasundan'),
           TextSpanHelper.textSpan(
-              ' and have approximately 2 years of experience in the field.'),
+              ' and has approximately 2 years of experience in the field.'),
         ],
       ),
     );
@@ -72,7 +73,7 @@ class HomePage extends StatelessWidget {
             '#',
             'projects',
             bold: false,
-            onTap: () => Navigator.pushNamed(context, AppRoutes.projects),
+            onTap: () => context.go(AppRoutes.projects),
           ),
           TextSpanHelper.textSpan(' page.'),
         ],
