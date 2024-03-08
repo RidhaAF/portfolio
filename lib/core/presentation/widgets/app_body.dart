@@ -11,30 +11,32 @@ class AppBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Center(
-          child: SizedBox(
-            width: MediaQuery.sizeOf(context).width * 0.80,
-            child: child,
+    return SafeArea(
+      child: Stack(
+        children: [
+          Center(
+            child: SizedBox(
+              width: MediaQuery.sizeOf(context).width * 0.80,
+              child: child,
+            ),
           ),
-        ),
-        ModalRoute.of(context)?.settings.name == AppRoutes.home
-            ? const Align(
-                alignment: Alignment.topRight,
-                child: Padding(
-                  padding: EdgeInsets.symmetric(
-                    vertical: AppConstants.defaultMargin / 4,
+          ModalRoute.of(context)?.settings.name == AppRoutes.home
+              ? const Align(
+                  alignment: Alignment.topRight,
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(
+                      vertical: AppConstants.defaultMargin / 4,
+                    ),
+                    child: DarkModeButton(),
                   ),
-                  child: DarkModeButton(),
-                ),
-              )
-            : const SizedBox.shrink(),
-        const Align(
-          alignment: Alignment.bottomCenter,
-          child: AppCopyright(),
-        ),
-      ],
+                )
+              : const SizedBox.shrink(),
+          const Align(
+            alignment: Alignment.bottomCenter,
+            child: AppCopyright(),
+          ),
+        ],
+      ),
     );
   }
 }
