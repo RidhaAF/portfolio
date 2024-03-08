@@ -26,7 +26,7 @@ class ProjectsGrid extends StatelessWidget {
         crossAxisCount: crossAxisCount,
         mainAxisSpacing: AppConstants.defaultMargin,
         crossAxisSpacing: AppConstants.defaultMargin,
-        childAspectRatio: 0.7,
+        childAspectRatio: 0.85,
       ),
       itemCount: reversedProjects.length,
       itemBuilder: (context, i) {

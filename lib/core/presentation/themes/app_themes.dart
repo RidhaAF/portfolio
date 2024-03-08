@@ -9,7 +9,7 @@ class AppTheme {
     scaffoldBackgroundColor: Colors.white,
     primaryColor: Colors.white,
     colorScheme: ColorScheme.light(
-      primary: Colors.green.shade900,
+      primary: Colors.green.shade700,
       secondary: Colors.black54,
       tertiary: Colors.black38,
       background: Colors.white,
@@ -113,7 +113,7 @@ class AppTheme {
     scaffoldBackgroundColor: Colors.black87,
     primaryColor: Colors.black87,
     colorScheme: ColorScheme.dark(
-      primary: Colors.green.shade900,
+      primary: Colors.green.shade700,
       secondary: Colors.white60,
       tertiary: Colors.white38,
       background: Colors.black87,

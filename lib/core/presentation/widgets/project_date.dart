@@ -5,7 +5,12 @@ import 'package:portfolio/feature/data/models/project/project_model.dart';
 
 class ProjectDate extends StatelessWidget {
   final Project project;
-  const ProjectDate({super.key, required this.project});
+  final double fontSize;
+  const ProjectDate({
+    super.key,
+    required this.project,
+    this.fontSize = 12,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +20,7 @@ class ProjectDate extends StatelessWidget {
       formattedDate,
       style: TextStyle(
         color: Theme.of(context).colorScheme.tertiary,
-        fontSize: 10,
+        fontSize: fontSize,
         fontWeight: AppConstants.light,
       ),
     );

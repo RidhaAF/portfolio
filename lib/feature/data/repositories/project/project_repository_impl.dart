@@ -7,9 +7,28 @@ import 'package:portfolio/feature/domain/repositories/project/project_repository
 class ProjectRepositoryImpl implements ProjectRepository {
   @override
   Future<ProjectModel> getProjects() async {
-    String response = await rootBundle.loadString('assets/data/projects.json');
-    Map<String, dynamic> data = jsonDecode(response);
+    try {
+      String response =
+          await rootBundle.loadString('assets/data/projects.json');
+      Map<String, dynamic> data = jsonDecode(response);
 
-    return ProjectModel.fromJson(data);
+      return ProjectModel.fromJson(data);
+    } catch (e) {
+      throw Exception(e);
+    }
+  }
+
+  @override
+  Future<Project> getProjectDetail(int id) async {
+    try {
+      String response =
+          await rootBundle.loadString('assets/data/projects.json');
+      Map<String, dynamic> data = jsonDecode(response);
+      int index = id - 1;
+
+      return Project.fromJson(data['projects'][index]);
+    } catch (e) {
+      throw Exception(e);
+    }
   }
 }

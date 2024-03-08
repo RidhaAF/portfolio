@@ -9,4 +9,8 @@ class ProjectUseCase {
   Future<ProjectModel> getProjects() async {
     return await _repository.getProjects();
   }
+
+  Future<Project> getProjectDetail(int id) async {
+    return await _repository.getProjectDetail(id);
+  }
 }
