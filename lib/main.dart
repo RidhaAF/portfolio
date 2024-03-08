@@ -6,6 +6,7 @@ import 'package:portfolio/core/presentation/routes/app_pages.dart';
 import 'package:portfolio/core/presentation/themes/app_themes.dart';
 import 'package:portfolio/core/utils/helpers/theme_helper.dart';
 import 'package:portfolio/di/injection.dart';
+import 'package:portfolio/feature/presentation/bloc/projects/project_detail/project_detail_bloc.dart';
 import 'package:portfolio/feature/presentation/bloc/projects/projects_bloc.dart';
 import 'package:url_strategy/url_strategy.dart';
 
@@ -23,12 +24,14 @@ class MyApp extends StatelessWidget {
   MyApp({super.key, this.savedThemeMode});
 
   final ProjectsBloc _projectsBloc = di<ProjectsBloc>();
+  final ProjectDetailBloc _projectDetailBloc = di<ProjectDetailBloc>();
 
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => _projectsBloc),
+        BlocProvider(create: (context) => _projectDetailBloc),
       ],
       child: AdaptiveTheme(
         light: AppTheme.light,

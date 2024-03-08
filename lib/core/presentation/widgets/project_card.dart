@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/core/presentation/widgets/default_spacer.dart';
-import 'package:portfolio/core/presentation/widgets/project_date.dart';
-import 'package:portfolio/core/presentation/widgets/project_description.dart';
+import 'package:go_router/go_router.dart';
 import 'package:portfolio/core/presentation/widgets/project_image.dart';
 import 'package:portfolio/core/presentation/widgets/project_name.dart';
 import 'package:portfolio/core/utils/constants/app_constants.dart';
 import 'package:portfolio/feature/data/models/project/project_model.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class ProjectCard extends StatelessWidget {
   final Project project;
@@ -14,15 +11,21 @@ class ProjectCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return _cardSection(project);
+    return _cardSection(context, project);
   }
 
-  Widget _cardSection(Project project) {
-    final String url = project.url;
+  Widget _cardSection(BuildContext context, Project project) {
     const double radius = AppConstants.defaultRadius;
 
     return InkWell(
-      onTap: () => launchUrl(Uri.parse(url)),
+      onTap: () {
+        int id = project.id;
+
+        context.go(
+          '/projects/$id',
+          extra: project,
+        );
+      },
       radius: radius,
       borderRadius: BorderRadius.circular(radius),
       child: Card(
@@ -40,17 +43,8 @@ class ProjectCard extends StatelessWidget {
       children: [
         ProjectImage(project: project),
         Padding(
-          padding: const EdgeInsets.all(AppConstants.defaultMargin),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              ProjectName(project: project),
-              const DefaultSpacer(size: 4),
-              ProjectDescription(project: project),
-              const DefaultSpacer(size: 4),
-              ProjectDate(project: project),
-            ],
-          ),
+          padding: const EdgeInsets.all(AppConstants.defaultMargin / 2),
+          child: ProjectName(project: project),
         ),
       ],
     );

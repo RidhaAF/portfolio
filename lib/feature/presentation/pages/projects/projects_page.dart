@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:portfolio/core/presentation/widgets/app_body.dart';
 import 'package:portfolio/core/presentation/widgets/app_loading_indicator.dart';
-import 'package:portfolio/core/presentation/widgets/dark_mode_button.dart';
+import 'package:portfolio/core/presentation/widgets/app_refresh_indicator.dart';
+import 'package:portfolio/core/presentation/widgets/default_app_bar.dart';
 import 'package:portfolio/core/presentation/widgets/error_text.dart';
 import 'package:portfolio/core/presentation/widgets/projects_grid.dart';
 import 'package:portfolio/feature/data/models/project/project_model.dart';
@@ -29,18 +30,12 @@ class _ProjectsPageState extends State<ProjectsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('ridha\'s projects'),
-        actions: const [
-          DarkModeButton(),
-        ],
+      appBar: const DefaultAppBar(
+        title: Text('ridha\'s projects'),
       ),
       body: AppBody(
-        child: RefreshIndicator(
-          onRefresh: () async {
-            await Future.delayed(const Duration(seconds: 1));
-            _onRefresh();
-          },
+        child: AppRefreshIndicator(
+          refresh: _onRefresh,
           child: _projectsContent(context),
         ),
       ),

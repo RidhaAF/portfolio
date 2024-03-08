@@ -5,36 +5,46 @@ import 'package:portfolio/feature/data/models/project/project_model.dart';
 
 class ProjectImage extends StatelessWidget {
   final Project project;
-  const ProjectImage({super.key, required this.project});
+  final double width;
+  final double radius;
+  const ProjectImage({
+    super.key,
+    required this.project,
+    this.width = double.infinity,
+    this.radius = 0,
+  });
 
   @override
   Widget build(BuildContext context) {
     final String image = project.image;
-    const double imageWidth = double.infinity;
+    final double imageWidth = width;
     const BoxFit imageFit = BoxFit.cover;
     const String failedImage = 'assets/images/image_load_failed.png';
     final Color tertiaryColor = Theme.of(context).colorScheme.tertiary;
 
     return AspectRatio(
       aspectRatio: 1,
-      child: CachedNetworkImage(
-        imageUrl: image,
-        placeholder: (context, url) => Container(
-          color: tertiaryColor,
-          width: imageWidth,
-          child: const AppLoadingIndicator(),
-        ),
-        errorWidget: (context, url, error) => Container(
-          color: tertiaryColor,
-          child: Image.asset(
-            failedImage,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(radius),
+        child: CachedNetworkImage(
+          imageUrl: image,
+          placeholder: (context, url) => Container(
+            color: tertiaryColor,
             width: imageWidth,
-            fit: imageFit,
+            child: const AppLoadingIndicator(),
           ),
+          errorWidget: (context, url, error) => Container(
+            color: tertiaryColor,
+            child: Image.asset(
+              failedImage,
+              width: imageWidth,
+              fit: imageFit,
+            ),
+          ),
+          width: imageWidth,
+          fit: imageFit,
+          useOldImageOnUrlChange: true,
         ),
-        width: imageWidth,
-        fit: imageFit,
-        useOldImageOnUrlChange: true,
       ),
     );
   }

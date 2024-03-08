@@ -3,7 +3,14 @@ import 'package:portfolio/feature/data/models/project/project_model.dart';
 
 class ProjectDescription extends StatelessWidget {
   final Project project;
-  const ProjectDescription({super.key, required this.project});
+  final double fontSize;
+  final int maxLines;
+  const ProjectDescription({
+    super.key,
+    required this.project,
+    this.fontSize = 12,
+    this.maxLines = 3,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -13,11 +20,11 @@ class ProjectDescription extends StatelessWidget {
       description,
       style: TextStyle(
         color: Theme.of(context).colorScheme.secondary,
-        fontSize: 12,
+        fontSize: fontSize,
       ),
       softWrap: true,
-      maxLines: 3,
-      overflow: TextOverflow.ellipsis,
+      maxLines: maxLines == 0 ? null : maxLines,
+      overflow: maxLines == 0 ? TextOverflow.visible : TextOverflow.ellipsis,
     );
   }
 }
