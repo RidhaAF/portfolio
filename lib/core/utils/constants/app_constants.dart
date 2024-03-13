@@ -13,4 +13,6 @@ class AppConstants {
   static const FontWeight bold = FontWeight.w700;
   static const FontWeight extraBold = FontWeight.w800;
   static const FontWeight black = FontWeight.w900;
+
+  static const String projectPath = 'assets/data/projects.json';
 }

@@ -1,6 +1,7 @@
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/core/utils/constants/app_constants.dart';
+import 'package:portfolio/core/utils/constants/profile_constant.dart';
 
 class AppCopyright extends StatelessWidget {
   const AppCopyright({super.key});
@@ -19,6 +20,7 @@ class AppCopyright extends StatelessWidget {
     final List<Color> gradientColors =
         isDark ? darkModeGradient : lightModeGradient;
     final String year = DateTime.now().year.toString();
+    const String name = ProfileConstant.name;
 
     return Container(
       width: double.infinity,
@@ -35,7 +37,7 @@ class AppCopyright extends StatelessWidget {
         child: Align(
           alignment: Alignment.bottomRight,
           child: Text(
-            '© $year ridha. all rights reserved.',
+            '© $year $name. all rights reserved.',
             style: const TextStyle(
               fontSize: 10,
             ),
