@@ -15,17 +15,16 @@ class LineShimmer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      physics: const NeverScrollableScrollPhysics(),
-      shrinkWrap: true,
-      itemCount: itemCount,
-      itemBuilder: (context, i) {
-        double bottom = 0;
-        if (itemCount > 1 && i < itemCount - 1) {
-          bottom = AppConstants.defaultMargin / 4;
-        }
+    List<Widget> shimmerBoxes = [];
 
-        return Padding(
+    for (int i = 0; i < itemCount; i++) {
+      double bottom = 0;
+      if (itemCount > 1 && i < itemCount - 1) {
+        bottom = AppConstants.defaultMargin / 2;
+      }
+
+      shimmerBoxes.add(
+        Padding(
           padding: EdgeInsets.only(
             bottom: bottom,
           ),
@@ -36,8 +35,13 @@ class LineShimmer extends StatelessWidget {
               Radius.circular(AppConstants.defaultRadius),
             ),
           ),
-        );
-      },
+        ),
+      );
+    }
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: shimmerBoxes,
     );
   }
 }

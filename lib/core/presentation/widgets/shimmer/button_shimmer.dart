@@ -10,7 +10,7 @@ class ButtonShimmer extends StatelessWidget {
     return ElevatedButton(
       onPressed: () {},
       child: const ShimmerBox(
-        width: 64,
+        width: 128,
         height: 8,
         borderRadius: BorderRadius.all(
           Radius.circular(AppConstants.defaultRadius),

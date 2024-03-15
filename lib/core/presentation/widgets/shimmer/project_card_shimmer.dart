@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/core/presentation/widgets/shimmer/line_shimmer.dart';
 import 'package:portfolio/core/presentation/widgets/shimmer/project_image_shimmer.dart';
-import 'package:portfolio/core/presentation/widgets/shimmer/project_name.dart';
 import 'package:portfolio/core/utils/constants/app_constants.dart';
 
 class ProjectCardShimmer extends StatelessWidget {
@@ -29,7 +29,10 @@ class ProjectCardShimmer extends StatelessWidget {
         ProjectImageShimmer(),
         Padding(
           padding: EdgeInsets.all(AppConstants.defaultMargin / 2),
-          child: ProjectNameShimmer(),
+          child: LineShimmer(
+            width: 184,
+            itemCount: 1,
+          ),
         ),
       ],
     );

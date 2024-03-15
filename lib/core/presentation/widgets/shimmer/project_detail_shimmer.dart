@@ -76,7 +76,6 @@ class ProjectDetailShimmer extends StatelessWidget {
         ),
         DefaultSpacer(size: AppConstants.defaultMargin / 2),
         LineShimmer(
-          width: 64,
           height: 8,
           itemCount: 1,
         ),
