@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:portfolio/core/presentation/widgets/app_loading_indicator.dart';
+import 'package:portfolio/core/presentation/widgets/shimmer/project_image_shimmer.dart';
 import 'package:portfolio/feature/data/models/project/project_model.dart';
 
 class ProjectImage extends StatelessWidget {
@@ -28,11 +28,7 @@ class ProjectImage extends StatelessWidget {
         borderRadius: BorderRadius.circular(radius),
         child: CachedNetworkImage(
           imageUrl: image,
-          placeholder: (context, url) => Container(
-            color: tertiaryColor,
-            width: imageWidth,
-            child: const AppLoadingIndicator(),
-          ),
+          placeholder: (context, url) => const ProjectImageShimmer(),
           errorWidget: (context, url, error) => Container(
             color: tertiaryColor,
             child: Image.asset(

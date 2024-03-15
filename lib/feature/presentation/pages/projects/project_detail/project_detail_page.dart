@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:portfolio/core/presentation/widgets/app_body.dart';
-import 'package:portfolio/core/presentation/widgets/app_loading_indicator.dart';
 import 'package:portfolio/core/presentation/widgets/app_refresh_indicator.dart';
 import 'package:portfolio/core/presentation/widgets/default_app_bar.dart';
 import 'package:portfolio/core/presentation/widgets/default_spacer.dart';
@@ -11,6 +10,7 @@ import 'package:portfolio/core/presentation/widgets/project_description.dart';
 import 'package:portfolio/core/presentation/widgets/project_image.dart';
 import 'package:portfolio/core/presentation/widgets/project_name.dart';
 import 'package:portfolio/core/presentation/widgets/project_url.dart';
+import 'package:portfolio/core/presentation/widgets/shimmer/project_detail_shimmer.dart';
 import 'package:portfolio/core/utils/constants/app_constants.dart';
 import 'package:portfolio/core/utils/helpers/device_type.dart';
 import 'package:portfolio/feature/data/models/project/project_model.dart';
@@ -54,7 +54,7 @@ class _ProjectDetailPageState extends State<ProjectDetailPage> {
     return BlocBuilder<ProjectDetailBloc, ProjectDetailState>(
       builder: (context, state) {
         if (state is ProjectDetailLoading) {
-          return const AppLoadingIndicator();
+          return const ProjectDetailShimmer();
         } else if (state is ProjectDetailLoaded) {
           final Project project = state.project;
 

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:portfolio/core/presentation/widgets/app_body.dart';
-import 'package:portfolio/core/presentation/widgets/app_loading_indicator.dart';
 import 'package:portfolio/core/presentation/widgets/app_refresh_indicator.dart';
 import 'package:portfolio/core/presentation/widgets/default_app_bar.dart';
 import 'package:portfolio/core/presentation/widgets/error_text.dart';
 import 'package:portfolio/core/presentation/widgets/projects_grid.dart';
+import 'package:portfolio/core/presentation/widgets/shimmer/projects_grid_shimmer.dart';
 import 'package:portfolio/feature/data/models/project/project_model.dart';
 import 'package:portfolio/feature/presentation/bloc/projects/projects_bloc.dart';
 
@@ -46,7 +46,7 @@ class _ProjectsPageState extends State<ProjectsPage> {
     return BlocBuilder<ProjectsBloc, ProjectsState>(
       builder: (context, state) {
         if (state is ProjectsLoading) {
-          return const AppLoadingIndicator();
+          return const ProjectsGridShimmer();
         } else if (state is ProjectsLoaded) {
           final ProjectModel projectsModel = state.projectsModel;
 
