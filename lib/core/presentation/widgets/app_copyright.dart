@@ -10,12 +10,12 @@ class AppCopyright extends StatelessWidget {
   Widget build(BuildContext context) {
     final bool isDark = AdaptiveTheme.of(context).mode.isDark;
     List<Color> lightModeGradient = [
-      Colors.white.withOpacity(0.01),
-      Colors.white.withOpacity(1),
+      Colors.white.withValues(alpha: 0.01),
+      Colors.white.withValues(alpha: 1),
     ];
     List<Color> darkModeGradient = [
-      Colors.black87.withOpacity(0.01),
-      Colors.black87.withOpacity(1),
+      Colors.black87.withValues(alpha: 0.01),
+      Colors.black87.withValues(alpha: 1),
     ];
     final List<Color> gradientColors =
         isDark ? darkModeGradient : lightModeGradient;

@@ -8,6 +8,7 @@ import 'package:portfolio/core/presentation/widgets/link_section.dart';
 import 'package:portfolio/core/presentation/widgets/profile_image.dart';
 import 'package:portfolio/core/utils/constants/app_constants.dart';
 import 'package:portfolio/core/utils/constants/profile_constant.dart';
+import 'package:portfolio/core/utils/helpers/experience_helper.dart';
 import 'package:portfolio/core/utils/helpers/text_span_helper.dart';
 
 class HomePage extends StatelessWidget {
@@ -56,7 +57,7 @@ class HomePage extends StatelessWidget {
           TextSpanHelper.linkSpan(
               'https://www.unpas.ac.id', 'Universitas Pasundan'),
           TextSpanHelper.textSpan(
-              ' and has approximately 2 years of experience in the field.'),
+              ' and has approximately ${calculateYoe()} years of experience in the field.'),
         ],
       ),
     );

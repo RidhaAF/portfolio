@@ -183,6 +183,38 @@
       "date": "2023-09-01",
       "image": "https://res.cloudinary.com/ridhaaf/image/upload/f_auto,q_auto/v1/portfolio/projects/vfwgzsupnatm3foeo44d",
       "url": "https://play.google.com/store/apps/details?id=com.ridhaaf.rock_paper_scissors"
+    },
+    {
+      "id": 24,
+      "name": "Payper",
+      "description": "AI-powered bill splitter using Google Gemini to parse receipts instantly, interactive item assignment, and WhatsApp breakdown generation | Next.js 16, TypeScript, Tailwind CSS, shadcn/ui, Zustand",
+      "date": "2026-01-18",
+      "image": "https://res.cloudinary.com/ridhaaf/image/upload/f_auto,q_auto/v1/portfolio/projects/payper_soacuv.png",
+      "url": "https://payper-bill.vercel.app/"
+    },
+    {
+      "id": 25,
+      "name": "Netflix OTP Relay",
+      "description": "Private automated sign-in code relay for a shared Netflix account featuring a retro split-flap departure board UI | Next.js App Router, TypeScript, Cloudflare Pages, Cloudflare KV, Cloudflare Workers",
+      "date": "2026-07-23",
+      "image": "https://res.cloudinary.com/ridhaaf/image/upload/f_auto,q_auto/v1/portfolio/projects/netflix_otp_relay_yh4hc6.png",
+      "url": "https://netflix-otp-relay.pages.dev/"
+    },
+    {
+      "id": 26,
+      "name": "Bookmark Manager (MarkVault)",
+      "description": "High-performance full-stack bookmark and link manager with PostgreSQL GIN full-text search, Redis caching & rate-limiting, and modern dark-mode responsive UX | React 18, TypeScript, Node.js, Express, PostgreSQL, Redis, Docker",
+      "date": "2026-08-04",
+      "image": "https://res.cloudinary.com/ridhaaf/image/upload/f_auto,q_auto/v1/portfolio/projects/bookmark_manager_wzlepz.png",
+      "url": "https://bookmark-manager-web-21b.pages.dev/"
+    },
+    {
+      "id": 27,
+      "name": "Lirik",
+      "description": "macOS Touch Bar widget displaying real-time synchronized karaoke lyrics for Spotify and Apple Music with LRCLIB API, tap-to-copy gesture, album artwork, and customizable themes | Swift, Pock plugin",
+      "date": "2026-08-05",
+      "image": "https://res.cloudinary.com/ridhaaf/image/upload/f_auto,q_auto/v1/portfolio/projects/lirik_k4f1jo.jpg",
+      "url": "https://github.com/RidhaAF/lirik"
     }
   ]
 }

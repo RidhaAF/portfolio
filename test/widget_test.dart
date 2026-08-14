@@ -1,30 +1,37 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-
-import 'package:portfolio/main.dart';
+import 'package:portfolio/core/presentation/themes/app_themes.dart';
+import 'package:portfolio/core/utils/helpers/experience_helper.dart';
+import 'package:portfolio/feature/presentation/pages/home/home_page.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(MyApp());
+  testWidgets('HomePage renders dynamic YOE', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      AdaptiveTheme(
+        light: AppTheme.light,
+        dark: AppTheme.dark,
+        initial: AdaptiveThemeMode.light,
+        builder: (theme, darkTheme) => MaterialApp(
+          theme: theme,
+          darkTheme: darkTheme,
+          home: const HomePage(),
+        ),
+      ),
+    );
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
-
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
-
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    final int yoe = calculateYoe();
+    expect(
+      find.byWidgetPredicate(
+        (widget) =>
+            widget is SelectableText &&
+            widget.textSpan?.toPlainText().contains(
+                    'approximately $yoe years of experience') ==
+                true,
+      ),
+      findsOneWidget,
+    );
   });
 }
+
+

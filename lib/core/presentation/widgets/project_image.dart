@@ -22,25 +22,41 @@ class ProjectImage extends StatelessWidget {
     const String failedImage = 'assets/images/image_load_failed.png';
     final Color tertiaryColor = Theme.of(context).colorScheme.tertiary;
 
+    final bool isAsset = image.startsWith('assets/');
+
     return AspectRatio(
       aspectRatio: 1,
       child: ClipRRect(
         borderRadius: BorderRadius.circular(radius),
-        child: CachedNetworkImage(
-          imageUrl: image,
-          placeholder: (context, url) => const ProjectImageShimmer(),
-          errorWidget: (context, url, error) => Container(
-            color: tertiaryColor,
-            child: Image.asset(
-              failedImage,
-              width: imageWidth,
-              fit: imageFit,
-            ),
-          ),
-          width: imageWidth,
-          fit: imageFit,
-          useOldImageOnUrlChange: true,
-        ),
+        child: isAsset
+            ? Image.asset(
+                image,
+                width: imageWidth,
+                fit: imageFit,
+                errorBuilder: (context, error, stackTrace) => Container(
+                  color: tertiaryColor,
+                  child: Image.asset(
+                    failedImage,
+                    width: imageWidth,
+                    fit: imageFit,
+                  ),
+                ),
+              )
+            : CachedNetworkImage(
+                imageUrl: image,
+                placeholder: (context, url) => const ProjectImageShimmer(),
+                errorWidget: (context, url, error) => Container(
+                  color: tertiaryColor,
+                  child: Image.asset(
+                    failedImage,
+                    width: imageWidth,
+                    fit: imageFit,
+                  ),
+                ),
+                width: imageWidth,
+                fit: imageFit,
+                useOldImageOnUrlChange: true,
+              ),
       ),
     );
   }
