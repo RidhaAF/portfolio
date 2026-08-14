@@ -12,7 +12,7 @@ class AppTheme {
       primary: Colors.green.shade700,
       secondary: Colors.black54,
       tertiary: Colors.black38,
-      background: Colors.white,
+      surface: Colors.white,
       error: Colors.red,
     ),
     fontFamily: GoogleFonts.jetBrainsMono().fontFamily,
@@ -99,7 +99,7 @@ class AppTheme {
         fontSize: 16,
       ),
     ),
-    cardTheme: CardTheme(
+    cardTheme: CardThemeData(
       color: Colors.white,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(AppConstants.defaultRadius),
@@ -116,7 +116,7 @@ class AppTheme {
       primary: Colors.green.shade700,
       secondary: Colors.white60,
       tertiary: Colors.white38,
-      background: Colors.black87,
+      surface: Colors.black87,
       error: Colors.red,
     ),
     fontFamily: GoogleFonts.jetBrainsMono().fontFamily,
@@ -203,7 +203,7 @@ class AppTheme {
         fontSize: 16,
       ),
     ),
-    cardTheme: CardTheme(
+    cardTheme: CardThemeData(
       color: Colors.black54,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(AppConstants.defaultRadius),
