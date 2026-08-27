@@ -215,6 +215,14 @@
       "date": "2026-08-05",
       "image": "https://res.cloudinary.com/ridhaaf/image/upload/f_auto,q_auto/v1/portfolio/projects/lirik_k4f1jo.jpg",
       "url": "https://github.com/RidhaAF/lirik"
+    },
+    {
+      "id": 28,
+      "name": "Tempel",
+      "description": "Turn Strava activities into transparent PNG stickers — route lines, stat cards, date stamps — for your Instagram Stories. | Next.js, TypeScript, Tailwind CSS, Cloudflare Pages",
+      "date": "2026-08-28",
+      "image": "https://res.cloudinary.com/ridhaaf/image/upload/f_auto,q_auto/v1/portfolio/projects/tempel_dysda5.png",
+      "url": "https://tempel.pages.dev"
     }
   ]
 }
