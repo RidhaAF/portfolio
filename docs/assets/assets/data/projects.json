@@ -223,6 +223,14 @@
       "date": "2026-08-28",
       "image": "https://res.cloudinary.com/ridhaaf/image/upload/f_auto,q_auto/v1/portfolio/projects/tempel_dysda5.png",
       "url": "https://tempel.pages.dev"
+    },
+    {
+      "id": 29,
+      "name": "Sewabasikal",
+      "description": "Premium bicycle rental platform for Bandung — browse by category (Road Bike, MTB, City, Commuter, Fixie, Folding), transparent daily/weekly pricing, size guide & WhatsApp checkout. | Next.js, TypeScript, Tailwind CSS, shadcn/ui, Supabase, Motion, Vercel",
+      "date": "2026-09-02",
+      "image": "https://res.cloudinary.com/ridhaaf/image/upload/f_auto,q_auto/v1/portfolio/projects/sewabasikal.png",
+      "url": "https://sewabasikal.vercel.app/"
     }
   ]
 }
